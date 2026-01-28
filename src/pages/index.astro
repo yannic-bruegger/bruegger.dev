@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import ServiceCard from '../components/ServiceCard.astro'
+import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide/astro'
+---
+
+<Layout title="Yannic Brügger">
+  <header class="mb-20">
+    <div class="mb-6">
+      <Image
+        src="https://github.com/yannic-bruegger.png"
+        alt="Yannic Brügger"
+        width={80}
+        height={80}
+        class="rounded-2xl ring-2 ring-zinc-800"
+      />
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+      Yannic Brügger
+    </h1>
+    <p class="text-zinc-400 text-xl">
+      People-first software development
+    </p>
+    <p class="text-zinc-500 mt-2">
+      Advocate for open source, education & digital sovereignty in Europe
+    </p>
+  </header>
+
+  <section class="mb-16">
+    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">About</h2>
+    <p class="text-zinc-300 leading-relaxed">
+      Team Lead of Business Solution Development at <a href="https://www.voss.de" class="text-violet-400 hover:text-violet-300 transition-colors">VOSS Automotive GmbH</a>,
+      building web-based business applications. Also working as a research associate at <a href="https://www.th-koeln.de/personen/yannic.bruegger/" class="text-violet-400 hover:text-violet-300 transition-colors">TH Köln</a>.
+      With a background in Media Informatics, I care about code that lasts and developers who grow.
+    </p>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Get in touch</h2>
+    <div class="flex flex-wrap gap-3">
+      <a
+        href="mailto:info@bruegger.dev?subject=Inquiry"
+        class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white font-medium rounded-xl transition-all duration-200"
+      >
+        <Mail class="w-5 h-5" />
+        Email me
+      </a>
+      <a
+        href="https://github.com/yannic-bruegger"
+        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-200"
+      >
+        <Github class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 transition-colors" />
+        <span class="text-zinc-300 group-hover:text-white transition-colors">GitHub</span>
+      </a>
+      <a
+        href="https://de.linkedin.com/in/yannic-br%C3%BCgger-733065302"
+        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-200"
+      >
+        <Linkedin class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 transition-colors" />
+        <span class="text-zinc-300 group-hover:text-white transition-colors">LinkedIn</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Services</h2>
+    <div class="space-y-4">
+      <ServiceCard
+        title="Web App Development"
+        description="End-to-end design and implementation of web applications. From concept to production-ready solutions tailored to your needs."
+      >
+        <Code slot="icon" class="w-6 h-6 text-violet-400" />
+      </ServiceCard>
+
+      <ServiceCard
+        title="Development Workshops"
+        description="Hands-on workshops covering modern development practices, AI-assisted coding, and building production-ready applications."
+      >
+        <Lightbulb slot="icon" class="w-6 h-6 text-violet-400" />
+      </ServiceCard>
+
+      <ServiceCard
+        title="Solution Consulting"
+        description="Strategic consulting for business applications using modern web technologies. From requirements analysis to architecture decisions."
+      >
+        <MessagesSquare slot="icon" class="w-6 h-6 text-violet-400" />
+      </ServiceCard>
+    </div>
+  </section>
+
+  <footer class="mt-20 pt-8 border-t border-zinc-800 flex gap-6">
+    <a href="/impressum" class="text-zinc-500 hover:text-white transition-colors text-sm">
+      Legal Notice
+    </a>
+    <a href="/privacy" class="text-zinc-500 hover:text-white transition-colors text-sm">
+      Privacy Policy
+    </a>
+  </footer>
+</Layout>
