@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
-import ServiceCard from '../components/ServiceCard.astro'
+import SpotlightCard from '../components/SpotlightCard.astro'
+import AsciiText from '../components/AsciiText.astro'
 import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide/astro'
 ---
 
@@ -16,9 +17,7 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
         class="rounded-2xl ring-2 ring-zinc-800"
       />
     </div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-      Yannic Brügger
-    </h1>
+    <AsciiText text="Yannic Brügger" class="text-4xl md:text-5xl font-bold mb-4" />
     <p class="text-zinc-400 text-xl">
       People-first software development
     </p>
@@ -66,26 +65,26 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
   <section>
     <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Services</h2>
     <div class="space-y-4">
-      <ServiceCard
+      <SpotlightCard
         title="Web App Development"
         description="End-to-end design and implementation of web applications. From concept to production-ready solutions tailored to your needs."
       >
         <Code slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
 
-      <ServiceCard
+      <SpotlightCard
         title="Development Workshops"
         description="Hands-on workshops covering modern development practices, AI-assisted coding, and building production-ready applications."
       >
         <Lightbulb slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
 
-      <ServiceCard
+      <SpotlightCard
         title="Solution Consulting"
         description="Strategic consulting for business applications using modern web technologies. From requirements analysis to architecture decisions."
       >
         <MessagesSquare slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
     </div>
   </section>
 
