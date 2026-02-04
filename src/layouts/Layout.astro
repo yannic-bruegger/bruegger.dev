@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import StructuredData from '../components/StructuredData.astro'
+import { getCombinedSchema } from '../utils/structuredData'
 
 interface Props {
   title: string
@@ -8,6 +10,9 @@ interface Props {
 
 const { title, description = "People-first software development. Advocate for open source, education & digital sovereignty in Europe." } = Astro.props
 const siteUrl = "https://bruegger.dev"
+const currentUrl = Astro.url.href
+
+const jsonLd = getCombinedSchema(title, description, currentUrl)
 ---
 
 <!doctype html>
@@ -36,6 +41,7 @@ const siteUrl = "https://bruegger.dev"
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <StructuredData jsonLd={jsonLd} />
   </head>
   <body class="bg-zinc-950 text-zinc-100 min-h-screen font-[Inter,system-ui,sans-serif] antialiased">
     <div class="fixed inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-cyan-950/20 pointer-events-none"></div>

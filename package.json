@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "chmod +x deploy.sh && ./deploy.sh",
+    "deploy:staging": "./deploy.sh staging",
+    "deploy:production": "./deploy.sh production"
   },
   "dependencies": {
     "@lucide/astro": "^0.563.0",

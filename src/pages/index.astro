@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
-import ServiceCard from '../components/ServiceCard.astro'
+import SpotlightCard from '../components/SpotlightCard.astro'
+import AsciiText from '../components/AsciiText.astro'
+import MagneticButton from '../components/MagneticButton.astro'
 import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide/astro'
 ---
 
@@ -16,9 +18,7 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
         class="rounded-2xl ring-2 ring-zinc-800"
       />
     </div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-      Yannic Brügger
-    </h1>
+    <AsciiText text="Yannic Brügger" class="text-4xl md:text-5xl font-bold mb-4" />
     <p class="text-zinc-400 text-xl">
       People-first software development
     </p>
@@ -39,13 +39,10 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
   <section class="mb-16">
     <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Get in touch</h2>
     <div class="flex flex-wrap gap-3">
-      <a
-        href="mailto:info@bruegger.dev?subject=Inquiry"
-        class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 text-white font-medium rounded-xl transition-all duration-200"
-      >
+      <MagneticButton href="mailto:info@bruegger.dev?subject=Inquiry">
         <Mail class="w-5 h-5" />
         Email me
-      </a>
+      </MagneticButton>
       <a
         href="https://github.com/yannic-bruegger"
         class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-200"
@@ -66,26 +63,26 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
   <section>
     <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Services</h2>
     <div class="space-y-4">
-      <ServiceCard
+      <SpotlightCard
         title="Web App Development"
         description="End-to-end design and implementation of web applications. From concept to production-ready solutions tailored to your needs."
       >
         <Code slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
 
-      <ServiceCard
+      <SpotlightCard
         title="Development Workshops"
         description="Hands-on workshops covering modern development practices, AI-assisted coding, and building production-ready applications."
       >
         <Lightbulb slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
 
-      <ServiceCard
+      <SpotlightCard
         title="Solution Consulting"
         description="Strategic consulting for business applications using modern web technologies. From requirements analysis to architecture decisions."
       >
         <MessagesSquare slot="icon" class="w-6 h-6 text-violet-400" />
-      </ServiceCard>
+      </SpotlightCard>
     </div>
   </section>
 
