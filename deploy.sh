@@ -7,7 +7,7 @@ set -e
 
 # Configuration
 BUILD_DIR="dist"
-REMOTE_HOST="srv1011411"
+REMOTE_HOST="bruegger.dev"
 REMOTE_USER="root"
 REMOTE_PATH="/var/www/bruegger.dev"
 
