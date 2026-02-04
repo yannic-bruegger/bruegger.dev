@@ -1,8 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { getCombinedSchema } from '../utils/structuredData'
+
+const breadcrumbs = [
+  { name: 'Home', url: 'https://bruegger.dev/' },
+  { name: 'Privacy Policy', url: 'https://bruegger.dev/privacy' }
+]
+
+const jsonLd = getCombinedSchema('Privacy Policy - Yannic Brügger', 'Privacy policy for Yannic Brügger website', 'https://bruegger.dev/privacy', breadcrumbs)
 ---
 
 <Layout title="Privacy Policy - Yannic Brügger">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   <a href="/" class="text-zinc-500 hover:text-white transition-colors mb-8 inline-block">&larr; Back</a>
 
   <h1 class="text-3xl font-bold mb-8">Privacy Policy</h1>
