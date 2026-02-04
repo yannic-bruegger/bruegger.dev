@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import StructuredData from '../components/StructuredData.astro'
+import ThemeToggle from '../components/ThemeToggle.astro'
 import { getCombinedSchema } from '../utils/structuredData'
 
 interface Props {
@@ -41,10 +42,66 @@ const jsonLd = getCombinedSchema(title, description, currentUrl)
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme color meta tag -->
+    <meta name="theme-color" content="#09090b">
+    
+    <!-- Theme manager script -->
+    <script>
+      // Theme management
+      declare global {
+        interface Window {
+          __toggleTheme?: () => 'light' | 'dark';
+        }
+      }
+      
+      (function() {
+        const STORAGE_KEY = 'theme';
+        const THEMES = ['light', 'dark'];
+        
+        function getInitialTheme(): 'light' | 'dark' {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (stored && THEMES.includes(stored)) return stored as 'light' | 'dark';
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        
+        function setTheme(theme: 'light' | 'dark') {
+          localStorage.setItem(STORAGE_KEY, theme);
+          document.documentElement.classList.remove('light', 'dark');
+          document.documentElement.classList.add(theme);
+          
+          // Update meta theme-color
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', theme === 'dark' ? '#09090b' : '#ffffff');
+          }
+        }
+        
+        function toggleTheme() {
+          const current = getInitialTheme();
+          const newTheme = current === 'dark' ? 'light' : 'dark';
+          setTheme(newTheme);
+          return newTheme;
+        }
+        
+        // Initialize
+        setTheme(getInitialTheme());
+        
+        // Make toggle available globally
+        (window as any).__toggleTheme = toggleTheme;
+      })();
+    </script>
+    
     <StructuredData jsonLd={jsonLd} />
   </head>
-  <body class="bg-zinc-950 text-zinc-100 min-h-screen font-[Inter,system-ui,sans-serif] antialiased">
-    <div class="fixed inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-cyan-950/20 pointer-events-none"></div>
+  <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen font-[Inter,system-ui,sans-serif] antialiased transition-colors duration-300">
+    <div class="fixed inset-0 bg-gradient-to-br from-violet-600/5 via-transparent to-cyan-600/5 dark:from-violet-950/20 dark:via-transparent dark:to-cyan-950/20 pointer-events-none transition-all duration-500"></div>
+    
+    <!-- Theme toggle button -->
+    <div class="fixed top-6 right-6 z-50">
+      <ThemeToggle />
+    </div>
+    
     <main class="relative max-w-2xl mx-auto px-6 py-20 md:py-32">
       <slot />
     </main>

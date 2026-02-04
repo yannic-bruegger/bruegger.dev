@@ -15,29 +15,31 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
         alt="Yannic Brügger"
         width={80}
         height={80}
-        class="rounded-2xl ring-2 ring-zinc-800"
+        class="rounded-2xl ring-2 ring-zinc-800 dark:ring-zinc-700"
       />
     </div>
-    <AsciiText text="Yannic Brügger" class="text-4xl md:text-5xl font-bold mb-4" />
-    <p class="text-zinc-400 text-xl">
+    <div class="mb-4">
+      <AsciiText text="Yannic Brügger" />
+    </div>
+    <p class="text-zinc-400 dark:text-zinc-300 text-xl">
       People-first software development
     </p>
-    <p class="text-zinc-500 mt-2">
+    <p class="text-zinc-500 dark:text-zinc-400 mt-2">
       Advocate for open source, education & digital sovereignty in Europe
     </p>
   </header>
 
   <section class="mb-16">
-    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">About</h2>
-    <p class="text-zinc-300 leading-relaxed">
-      Team Lead of Business Solution Development at <a href="https://www.voss.de" class="text-violet-400 hover:text-violet-300 transition-colors">VOSS Automotive GmbH</a>,
-      building web-based business applications. Also working as a research associate at <a href="https://www.th-koeln.de/personen/yannic.bruegger/" class="text-violet-400 hover:text-violet-300 transition-colors">TH Köln</a>.
+    <h2 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-6">About</h2>
+    <p class="text-zinc-300 dark:text-zinc-200 leading-relaxed">
+      Team Lead of Business Solution Development at <a href="https://www.voss.de" class="text-violet-400 hover:text-violet-300 dark:hover:text-violet-400 transition-colors">VOSS Automotive GmbH</a>,
+      building web-based business applications. Also working as a research associate at <a href="https://www.th-koeln.de/personen/yannic.bruegger/" class="text-violet-400 hover:text-violet-300 dark:hover:text-violet-400 transition-colors">TH Köln</a>.
       With a background in Media Informatics, I care about code that lasts and developers who grow.
     </p>
   </section>
 
   <section class="mb-16">
-    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Get in touch</h2>
+    <h2 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-6">Get in touch</h2>
     <div class="flex flex-wrap gap-3">
       <MagneticButton href="mailto:info@bruegger.dev?subject=Inquiry">
         <Mail class="w-5 h-5" />
@@ -45,23 +47,23 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
       </MagneticButton>
       <a
         href="https://github.com/yannic-bruegger"
-        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-200"
+        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-800 hover:border-zinc-700 dark:border-zinc-700 dark:hover:border-zinc-600 rounded-xl transition-all duration-200"
       >
-        <Github class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 transition-colors" />
-        <span class="text-zinc-300 group-hover:text-white transition-colors">GitHub</span>
+        <Github class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 dark:text-zinc-500 dark:group-hover:text-violet-400 transition-colors" />
+        <span class="text-zinc-300 group-hover:text-white dark:text-zinc-200 dark:group-hover:text-white transition-colors">GitHub</span>
       </a>
       <a
         href="https://de.linkedin.com/in/yannic-br%C3%BCgger-733065302"
-        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-xl transition-all duration-200"
+        class="group flex items-center gap-3 px-5 py-3 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-800 hover:border-zinc-700 dark:border-zinc-700 dark:hover:border-zinc-600 rounded-xl transition-all duration-200"
       >
-        <Linkedin class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 transition-colors" />
-        <span class="text-zinc-300 group-hover:text-white transition-colors">LinkedIn</span>
+        <Linkedin class="w-5 h-5 text-zinc-400 group-hover:text-violet-400 dark:text-zinc-500 dark:group-hover:text-violet-400 transition-colors" />
+        <span class="text-zinc-300 group-hover:text-white dark:text-zinc-200 dark:group-hover:text-white transition-colors">LinkedIn</span>
       </a>
     </div>
   </section>
 
   <section>
-    <h2 class="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-6">Services</h2>
+    <h2 class="text-sm font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-6">Services</h2>
     <div class="space-y-4">
       <SpotlightCard
         title="Web App Development"
@@ -86,11 +88,11 @@ import { Mail, Github, Linkedin, Lightbulb, MessagesSquare, Code } from '@lucide
     </div>
   </section>
 
-  <footer class="mt-20 pt-8 border-t border-zinc-800 flex gap-6">
-    <a href="/impressum" class="text-zinc-500 hover:text-white transition-colors text-sm">
+  <footer class="mt-20 pt-8 border-t border-zinc-800 dark:border-zinc-700 flex gap-6">
+    <a href="/impressum" class="text-zinc-500 hover:text-white dark:text-zinc-400 dark:hover:text-white transition-colors text-sm">
       Legal Notice
     </a>
-    <a href="/privacy" class="text-zinc-500 hover:text-white transition-colors text-sm">
+    <a href="/privacy" class="text-zinc-500 hover:text-white dark:text-zinc-400 dark:hover:text-white transition-colors text-sm">
       Privacy Policy
     </a>
   </footer>

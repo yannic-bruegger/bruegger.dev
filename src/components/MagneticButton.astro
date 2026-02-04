@@ -9,7 +9,7 @@ const { href, class: className } = Astro.props
 
 <a href={href} class:list={["animated-btn group relative inline-flex items-center gap-2 px-5 py-3 rounded-xl font-medium text-white", className]}>
   <span class="glow absolute inset-0 rounded-xl"></span>
-  <span class="absolute inset-[2px] bg-zinc-950 rounded-[10px] transition-colors group-hover:bg-zinc-900"></span>
+  <span class="absolute inset-[2px] bg-zinc-950 dark:bg-zinc-900 rounded-[10px] transition-colors group-hover:bg-zinc-900 dark:group-hover:bg-zinc-800"></span>
   <span class="relative z-10 flex items-center gap-2">
     <slot />
   </span>
